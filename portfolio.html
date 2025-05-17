@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="K Kashinath - Data Analyst Portfolio. Skilled in data visualization, statistical analysis, and machine learning projects like Loan Default Prediction and Fish Growth Prediction.">
+    <meta name="keywords" content="data analyst, portfolio, machine learning, data visualization, kashinath">
+    <meta name="author" content="K Kashinath">
+    <meta property="og:title" content="K Kashinath - Data Analyst Portfolio">
+    <meta property="og:description" content="Explore my projects on data analysis, machine learning, and visualization.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/kashinath19/portfolio/main/images/IMG.jpg">
+    <meta property="og:url" content="https://kashinath19.github.io/portfolio/">
+    <meta property="og:type" content="website">
+    <title>K Kashinath - Data Analyst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #fff;
+            --header-bg: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary-color: #1abc9c;
+            --secondary-color: #ecf0f1;
+            --text-color: #ecf0f1;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --header-bg: #1e1e1e;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            filter: var(--icon-filter);
+        }
+
+        :root {
+            --icon-filter: none;
+        }
+        .dark-mode {
+            --icon-filter: invert(1) brightness(1.5);
+        }
+
+        header {
+            background-color: var(--header-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            padding: 8px;
+        }
+
+        .theme-toggle:hover::after {
+            content: attr(title);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            box-shadow: var(--shadow);
+        }
+
+        .theme-indicator {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: var(--text-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hero {
+            padding: 60px 0;
+        }
+
+        .hero-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .hero-name {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 0 0 auto;
+        }
+
+        .hero-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 4px solid var(--primary-color);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-content {
+            max-width: 70%;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 30px 0 15px;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 20px;
+            margin: 15px 0 10px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 40px 0;
+        }
+
+        .education-item, .project-card {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .education-item h3 {
+            color: var(--primary-color);
+        }
+
+        .education-item p {
+            margin-bottom: 5px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            width: calc(25% - 15px);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .skill-card i {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .other-projects {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-options a {
+            font-size: 24px;
+            color: var(--text-color);
+            padding: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: var(--header-bg);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            nav {
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .hamburger {
+                display: block;
+                order: 1;
+                margin-right: 10px;
+            }
+
+            .logo {
+                order: 2;
+                flex-grow: 1;
+                text-align: center;
+            }
+
+            .theme-container {
+                order: 3;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--header-bg);
+                box-shadow: var(--shadow);
+                padding: 10px 0;
+                z-index: 99;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+                padding: 10px;
+                display: block;
+            }
+
+            .theme-indicator {
+                display: inline;
+                font-size: 12px;
+            }
+
+            .theme-toggle {
+                font-size: 16px;
+                padding: 6px;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .hero-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+            }
+
+            .hero-name {
+                margin-bottom: 0;
+                flex: 1;
+            }
+
+            .hero-name h1 {
+                text-align: left;
+            }
+
+            .hero-image {
+                flex: 0 0 auto;
+            }
+
+            .hero-image img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: left;
+            }
+
+            .hero-content h2 {
+                text-align: left;
+            }
+
+            .hero-content p {
+                text-align: justify;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 8px 16px;
+                font-size: 14px;
+                min-width: 100px;
+            }
+
+            .skill-card {
+                width: calc(50% - 15px);
+            }
+
+            .skill-card i {
+                font-size: 32px;
+            }
+
+            .project-image {
+                height: 150px;
+            }
+
+            .project-card p br {
+                display: none;
+            }
+
+            .project-card p {
+                line-height: 1.4;
+            }
+
+            .contact-options a {
+                font-size: 20px;
+                padding: 8px;
+            }
+
+            .section {
+                padding: 30px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skill-card {
+                width: 100%;
+            }
+
+            .hero-image img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .hero-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+
+            .btn {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+
+            .project-image {
+                height: 120px;
+            }
+
+            .theme-indicator {
+                font-size: 10px;
+            }
+
+            .theme-toggle {
+                font-size: 14px;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">K Kashinath</div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="theme-container" style="display: flex; align-items: center; gap: 10px;">
+                    <button class="theme-toggle" id="themeToggle" title="Switch to Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span id="themeIndicator" class="theme-indicator">Light</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="hero-header">
+                <div class="hero-name">
+                    <h1>Hi, I'm Kashinath</h1>
+                </div>
+                <div class="hero-image">
+                    <img src="https://raw.githubusercontent.com/kashinath19/portfolio/main/images/IMG.jpg" alt="K Kashinath Profile Picture" onerror="this.src='https://via.placeholder.com/200?text=Profile+Image'">
+                </div>
+            </div>
+            <div class="hero-content">
+                <h2>Data Analyst</h2>
+                <p>Passionate about transforming raw data into meaningful insights that drive business decisions. Skilled in data visualization, statistical analysis, and database management.</p>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>MySQL</h3>
+                    <p>Database design, querying, and optimization</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Data analysis with Pandas, NumPy, and visualization</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Power BI</h3>
+                    <p>Interactive dashboards and data visualization</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-file-excel"></i>
+                    <h3>Excel</h3>
+                    <p>Advanced formulas, pivot tables, and data analysis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/kashinath19/portfolio/main/images/bank.jpg" alt="Loan Default Prediction Visualization" class="project-image" onerror="this.src='https://via.placeholder.com/280x180?text=Loan+Default+Prediction'">
+                    <h3>Loan Default Prediction</h3>
+                    <p>
+                        Identified the need to predict loan defaulters for better credit risk management.<br>
+                        Built a machine learning system using Naive Bayes and KNN to analyze financial data.<br>
+                        Achieved 85% prediction accuracy, enabling informed lending decisions and reducing financial risks.
+                    </p>
+                    <a href="https://github.com/kashinath19/Loan_Default_Prediction_Project" class="btn" target="_blank">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/kashinath19/portfolio/main/images/fish.jpg" alt="Fish Growth Prediction Visualization" class="project-image" onerror="this.src='https://via.placeholder.com/280x180?text=Fish+Growth+Prediction'">
+                    <h3>Automated Fish Growth Prediction Using Deep CNN and GUI</h3>
+                    <p>
+                        Identified manual fish growth tracking issues.<br>
+                        Tackled fish growth scalability, created a CNN-based tool with real-time predictions.<br>
+                        Achieved automated predictions with MSE (0.0005) and R² (0.99) metrics.
+                    </p>
+                    <a href="https://github.com/kashinath19/Fish_Growth_Estimation_Project" class="btn" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="other-projects">
+                <h2>Other Projects</h2>
+                <p>Check out more of my work in data analysis and machine learning.</p>
+                <a href="projects.html" class="btn">Explore More Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Technology in Computer Science</h3>
+                <p>St. Martins Engineering College, Kompally Sec-500100</p>
+                <p>CGPA: 8.0</p>
+            </div>
+            <div class="education-item">
+                <h3>Intermediate (MPC)</h3>
+                <p>Sri Chaitanya Junior Kalashala, SR Nagar 500873</p>
+                <p>Percentage: 93.4%</p>
+            </div>
+            <div class="education-item">
+                <h3>SSC</h3>
+                <p>St. Alphonsus High School, Banjara Hills Road No. 7, Hyderabad - 500034</p>
+                <p>CGPA: 8.0</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>If you're looking for a data analyst or have any questions, feel free to reach out.</p>
+            <a href="mailto:kambarkashinath19@gmail.com" class="btn">Email Me</a>
+            
+            <div class="contact-options" style="margin-top: 20px;">
+                <h3 style="margin-bottom: 10px;">Other Ways to Connect</h3>
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                    <a href="https://www.linkedin.com/in/k-kashinath-029180274" target="_blank" title="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/kashinath19" target="_blank" title="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="tel:+918096166143" title="Call Me">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 K Kashinath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIndicator = document.getElementById('themeIndicator');
+        const icon = themeToggle.querySelector('i');
+
+        const savedTheme = localStorage.getItem('theme') || 
+                           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+            themeToggle.setAttribute('title', 'Switch to Light Mode');
+            themeIndicator.textContent = 'Dark Mode';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.setAttribute('title', 'Switch to Light Mode');
+                themeIndicator.textContent = 'Dark Mode';
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+                themeToggle.setAttribute('title', 'Switch to Dark Mode');
+                themeIndicator.textContent = 'Light Mode';
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    const icon = hamburger.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

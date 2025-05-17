@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="K Kashinath - Additional Projects. Explore more data analysis and machine learning projects.">
+    <meta name="keywords" content="data analyst, projects, machine learning, data visualization, kashinath">
+    <meta name="author" content="K Kashinath">
+    <meta property="og:title" content="K Kashinath - Additional Projects">
+    <meta property="og:description" content="Explore more of my projects on data analysis, machine learning, and visualization.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/kashinath19/portfolio/main/images/IMG.jpg">
+    <meta property="og:url" content="https://kashinath19.github.io/portfolio/projects.html">
+    <meta property="og:type" content="website">
+    <title>K Kashinath - Additional Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #fff;
+            --header-bg: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary-color: #1abc9c;
+            --secondary-color: #ecf0f1;
+            --text-color: #ecf0f1;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --header-bg: #1e1e1e;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            padding: 8px;
+        }
+
+        .theme-toggle:hover::after {
+            content: attr(title);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            box-shadow: var(--shadow);
+        }
+
+        .theme-indicator {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: var(--text-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 30px 0 15px;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 20px;
+            margin: 15px 0 10px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 40px 0;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: var(--header-bg);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            nav {
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .hamburger {
+                display: block;
+                order: 1;
+                margin-right: 10px;
+            }
+
+            .logo {
+                order: 2;
+                flex-grow: 1;
+                text-align: center;
+            }
+
+            .theme-container {
+                order: 3;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--header-bg);
+                box-shadow: var(--shadow);
+                padding: 10px 0;
+                z-index: 99;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+                padding: 10px;
+                display: block;
+            }
+
+            .theme-indicator {
+                display: inline;
+                font-size: 12px;
+            }
+
+            .theme-toggle {
+                font-size: 16px;
+                padding: 6px;
+            }
+
+            .section {
+                padding: 30px 0;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 8px 16px;
+                font-size: 14px;
+                min-width: 100px;
+            }
+
+            .project-image {
+                height: 150px;
+            }
+
+            .project-card p br {
+                display: none;
+            }
+
+            .project-card p {
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+
+            .btn {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+
+            .project-image {
+                height: 120px;
+            }
+
+            .theme-indicator {
+                font-size: 10px;
+            }
+
+            .theme-toggle {
+                font-size: 14px;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">K Kashinath</div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="portfolio.html">Back to Portfolio</a></li>
+                </ul>
+                <div class="theme-container" style="display: flex; align-items: center; gap: 10px;">
+                    <button class="theme-toggle" id="themeToggle" title="Switch to Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span id="themeIndicator" class="theme-indicator">Light</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h1>Additional Projects</h1>
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/kashinath19/portfolio/main/images/coffee.jpg" alt="Coffee Shop Sales Dashboard Visualization" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/280x180?text=Coffee+Shop+Project';">
+                    <h3>Project 3: Coffee Shop Sales 2024</h3>
+                    <p>
+                        Addressed and handled data quality issues (nulls, format errors, duplicates) in a 1,261-row coffee shop sales dataset.<br>
+                        Tools Used: Excel (Power Query) for data cleaning and Power BI for visualization.<br>
+                        Built an interactive Power BI dashboard visualizing sales trends, top products, and store performance, with dynamic and daily/hourly sales insights.
+                    </p>
+                    <a href="https://github.com/kashinath19/coffee_shop_sales_project" class="btn" target="_blank">View Project</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/kashinath19/E-Eommerce_Sales_2024/main/ecommerce.jpg" alt="E-Commerce Sales Dashboard Visualization" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/280x180?text=E-Commerce+Project';">
+                    <h3>Project 4: E-Commerce Sales 2024</h3>
+                    <p>
+                        Problems Identified: Addressed data quality issues (nulls, format errors, duplicates) in e-commerce dataset to ensure accurate sales and customer analysis.<br>
+                        Tools Used: SQL, Excel, and Power BI.<br>
+                        Achieved: Developed interactive dashboards in Excel and created pivot charts, providing insights into sales trends, customer behavior, and product performance.
+                    </p>
+                    <a href="https://github.com/kashinath19/E-Eommerce_Sales_2024" class="btn" target="_blank">View Project</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://raw.githubusercontent.com/kashinath19/Bike-Sales/main/Bike.jpg" alt="Bike Sales Dashboard Visualization" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/280x180?text=Bike+Sales+Project';">
+                    <h3>Project 5: Bike Sales</h3>
+                    <p>
+                        Problems Identified: Formatted inconsistent date entries and ensured numerical columns were in currency format for accurate analysis in Excel.<br>
+                        <br>Tools Used: Excel for data cleaning, pivot tables, chart creation, and interactive dashboard design.<br>
+                        Achieved: Developed an Excel dashboard with pivot charts and slicers, revealing sales trends, top products, and customer insights.
+                    </p>
+                    <a href="https://github.com/kashinath19/Bike-Sales" class="btn" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 K Kashinath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIndicator = document.getElementById('themeIndicator');
+        const icon = themeToggle.querySelector('i');
+
+        const savedTheme = localStorage.getItem('theme') || 
+                           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+            themeToggle.setAttribute('title', 'Switch to Light Mode');
+            themeIndicator.textContent = 'Dark Mode';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.setAttribute('title', 'Switch to Light Mode');
+                themeIndicator.textContent = 'Dark Mode';
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+                themeToggle.setAttribute('title', 'Switch to Dark Mode');
+                themeIndicator.textContent = 'Light Mode';
+            }
+        });
+    </script>
+</body>
+</html>
